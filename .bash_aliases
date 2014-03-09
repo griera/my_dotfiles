@@ -46,4 +46,5 @@ alias update='sudo apt-get update && sudo apt-get upgrade'
 alias clr='clear'
 alias x='exit'
 alias chrome='google-chrome'
+alias run-so2-vm='vmplayer ~/my_links/SO2/Ubuntu-Proso-2009/Ubuntu.vmx'
 
