@@ -252,11 +252,6 @@ function srchcmd () {
     history | grep "$@"
 }
 
-# Lists, alphabetically sorted, all functions defined by user at ~/.bashrc file
-function lsusrfuncs () {
-    less ~/.bashrc | grep ^function | cut -d ' ' -f2 | sort
-}
-
 # Shows the IP assigned on the given interface
 function ifaceip () {
     [ $# -eq 0 ] && echo "Usage: ifaceip iface" && return 1
@@ -323,7 +318,7 @@ function dnsres () {
 
 # Removes trailing whitespaces for an etire directory.
 # It ignores .git an .svn folders and their contents.
-function rm_tr_white() {
+function rm_tr_white () {
     find . -not \( -name .svn -prune -o -name .git -prune \) -type f -print0 | xargs -0 sed -i -e "s/[[:space:]]*$//"
 }
 

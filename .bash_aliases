@@ -18,7 +18,7 @@ alias shutdown='sudo shutdown -h now'
 alias rebootnow='sudo shutdown -r now'
 
 # list all functions defined by myself on ~/.bashrc
-alias lsfuncs="grep ^function ~/.bashrc | cut -d ' ' -f2"
+alias lsusrfuncs="grep ^function ~/.bashrc | cut -d ' ' -f2 | sort"
 
 # Useful aliases related to LibreOffice suite
 alias writerlo='libreoffice --writer'
