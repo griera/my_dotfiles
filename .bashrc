@@ -319,7 +319,7 @@ function dnsres () {
 # Removes trailing whitespaces for an etire directory.
 # It ignores .git an .svn folders and their contents.
 function rm_tr_white () {
-    find . -not \( -name .svn -prune -o -name .git -prune \) -type f -print0 | xargs -0 sed -i -e "s/[[:space:]]*$//"
+    find . -not \( -name .svn -prune -o -name .git -prune -o -name '*.a' \) -type f -print0 | xargs -0 sed -i -e "s/[[:space:]]*$//"
 }
 
 #######################################
