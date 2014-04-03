@@ -156,7 +156,6 @@ HISTCONTROL=ignoredups
 
 export MY_FOLDER="/media/DADES/My_Folder"
 export DROPBOX_DIR="${MY_FOLDER}/Dropbox"
-export ZEOS_DIR="${MY_FOLDER}/Studies/FIB/Computer_Engineering_Specialization/Compulsory_Specialization/SO2/Laboratori/zeos/"
 
 
 #######################################

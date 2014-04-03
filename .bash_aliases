@@ -47,6 +47,6 @@ alias clr='clear'
 alias x='exit'
 alias chrome='google-chrome'
 alias run-so2-vm='vmplayer ~/my_links/SO2/Ubuntu-Proso-2009/Ubuntu.vmx'
-alias up-zeos="rsync -vzr --exclude=.git ${ZEOS_DIR}/* so2-vm:~/zeos/."
-alias dw-zeos="rsync -vzr --exclude=libjp.a so2-vm:~/zeos/* ${ZEOS_DIR}/."
+alias up-zeos='rsync -vzr --exclude=.git ~/my_links/zeos/* so2-vm:~/zeos/.'
+alias dw-zeos='rsync -vzr --exclude=libjp.a so2-vm:~/zeos/* ~/my_links/zeos/.'
 
