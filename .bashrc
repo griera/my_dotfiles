@@ -321,61 +321,6 @@ function rm_tr_white () {
     find . -not \( -name .svn -prune -o -name .git -prune -o -name '*.a' \) -type f -print0 | xargs -0 sed -i -e "s/[[:space:]]*$//"
 }
 
-# Creates a bootable USB flash drive with a Linux distribution.
-# The USB drive used must be already mounted.
-# The USB drive used will be formated, so backup your data before.
-function bootable_usb() {
-    if [ $# -ne 2 ] ; then
-        echo "Usage: bootable_usb [iso_path] [usb_mounted_point]"
-        echo "The USB drive used must be already mounted."
-        echo "The USB drive used will be formated, so backup your data before starting the process."
-        return 1
-    fi
-
-    ISO_PATH="$1"
-    OLD_MNT_USB="$2"
-    USB_LABEL="USB_DEVICE"
-    NEW_MNT_USB="$(dirname "${OLD_MNT_USB}")/${USB_LABEL}"
-    USB_DEV_PART_PATH="$(df | grep "${OLD_MNT_USB}" | cut -d ' ' -f1)"
-    USB_DEV_PATH="$(echo "${USB_DEV_PART_PATH}" | sed 's/[0-9]*//g')"
-
-    if [ ! -f ${ISO_PATH} ] ; then
-        echo "Linux image ${ISO_PATH} does not exists."
-        return 2
-    fi
-
-    if [ "x${USB_DEV_PART_PATH}" = "x" ] ; then
-        echo "There isn't any USB drive mounted on ${OLD_MNT_USB}"
-        return 3
-    fi
-
-    # Firstly formats the USB drive
-    echo -e "Formatting USB device...\n"
-    sudo umount ${USB_DEV_PART_PATH}
-    sudo mkfs.vfat -n ${USB_LABEL} ${USB_DEV_PART_PATH}
-
-    # Secondly creates the bootable USB flash drive
-    echo -e "\nCreating the bootable USB flash drive using $(basename ${ISO_PATH}) Linux image..."
-    sudo mkdir -p ${NEW_MNT_USB}
-    sudo mount -t vfat ${USB_DEV_PART_PATH} ${NEW_MNT_USB}
-
-    isohybrid ${ISO_PATH}
-    sudo dd if=${ISO_PATH} of=${USB_DEV_PATH}
-    DD_ERROR="$?"
-
-    sync
-
-    sudo umount ${USB_DEV_PART_PATH}
-    sudo rm -r ${NEW_MNT_USB}
-
-    if [ ${DD_ERROR} -ne 0 ] ; then
-        echo -e "\nThe process terminates with errors during the iso image copy."
-        return 4
-    fi
-
-    echo -e "\nThe bootable USB flash device has been created successfully!\nYou can eject the USB device."
-}
-
 #######################################
 ##              ALIASES              ##
 #######################################
