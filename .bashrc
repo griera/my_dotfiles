@@ -136,11 +136,11 @@ export PROMPT_COMMAND=setprompt1
 # Environment variable that set where cd builtin finds the directory.
 # If CDPATH is set, the working directory SHOULD be the first component
 # in order to assure the proper default functioning of cd builtin
-export CDPATH=.:~/my_links
+export CDPATH=.:~/my_links:~/repos
 
 # Set up PATH variable
 export PATH=${PATH}:${ANDROID_SDK}/platform-tools:${ANDROID_SDK}/tools:\
-${ANDROID_HOME}/bin:${CUDA_HOME}/bin:~/my_scripts
+${ANDROID_HOME}/bin:${CUDA_HOME}/bin:~/repos/my_scripts
 
 # Set timestamp to display in history command, using the following format:
 # 'dd-mm-yyyy hh:mm:ss '
