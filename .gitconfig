@@ -10,7 +10,6 @@
 [alias]
 	st = status
 	ph = push
-    phom = push -u origin master
 	cm = commit -m
 	cma = commit -am
 	cmam = commit --amend -m
@@ -19,3 +18,4 @@
 	f = fetch
 	mg = merge
 	df = diff
+	phom = push -u origin master
