@@ -10,7 +10,7 @@
 [alias]
 	st = status
 	ph = push
-    phom = push origin master
+    phom = push -u origin master
 	cm = commit -m
 	cma = commit -am
 	cmam = commit --amend -m
