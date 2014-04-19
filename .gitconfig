@@ -7,3 +7,14 @@
 	tool = vimdiff
 [color]
 	ui = true
+[alias]
+	st = status
+	p = push
+	cm = commit -m
+	cma = commit -am
+	cmam = commit --ammend -m
+	cl = clone
+	aa = add -A
+	f = fetch
+	mg = merge
+	df = diff
