@@ -16,6 +16,6 @@
 	cl = clone
 	aa = add -A
 	f = fetch
-	mg = merge
-	df = diff
+	m = merge
+	d = diff
 	phom = push -u origin master
