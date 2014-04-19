@@ -9,10 +9,11 @@
 	ui = true
 [alias]
 	st = status
-	p = push
+	ph = push
+    phom = push origin master
 	cm = commit -m
 	cma = commit -am
-	cmam = commit --ammend -m
+	cmam = commit --amend -m
 	cl = clone
 	aa = add -A
 	f = fetch
