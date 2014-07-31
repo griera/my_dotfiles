@@ -20,15 +20,6 @@ alias rebootnow='sudo shutdown -r now'
 # list all functions defined by myself on ~/.bashrc
 alias lsusrfuncs="grep ^function ~/.bashrc | cut -d ' ' -f2 | sort"
 
-# Useful aliases related to LibreOffice suite
-alias writerlo='libreoffice --writer'
-alias calclo='libreoffice --calc'
-alias drawlo='libreoffice --draw'
-alias mathlo='libreoffice --math'
-alias baselo='libreoffice --base'
-alias impresslo='libreoffice --impress'
-alias weblo='libreoffice --web'
-
 # history command useful aliases
 alias h1='history 10'
 alias h2='history 20'
