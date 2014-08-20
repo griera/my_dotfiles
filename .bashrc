@@ -140,7 +140,7 @@ export CDPATH=.:~/my_links:~/repos
 
 # Set up PATH variable
 export PATH=${PATH}:${ANDROID_SDK}/platform-tools:${ANDROID_SDK}/tools:\
-${ANDROID_HOME}/bin:${CUDA_HOME}/bin:~/repos/my_scripts
+${ANDROID_HOME}/bin:${CUDA_HOME}/bin:~/repos/my_scripts:~/my_links/Quiniela/Programes+Scripts
 
 # Set timestamp to display in history command, using the following format:
 # 'dd-mm-yyyy hh:mm:ss '
