@@ -32,6 +32,8 @@ alias mount='mount | column -t'
 
 # apt-get * commands useful aliases
 alias update='sudo apt-get update && sudo apt-get upgrade'
+alias purge='sudo apt-get --purge'
+alias remove='sudo apt-get --remove'
 
 # Useful aliases for frequently used commands
 alias clr='clear'
