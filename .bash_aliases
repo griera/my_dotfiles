@@ -45,4 +45,7 @@ alias up-zeos='rsync -vzr --exclude=.git ~/repos/zeos/* so2-vm:~/zeos/.'
 alias dw-zeos='rsync -vzr --exclude=libjp.a so2-vm:~/zeos/* ~/repos/zeos/.'
 alias lsla='ls -la'
 alias dbox-rst='dropbox stop && dropbox start'
+alias dbox-stp='dropbox stop'
+alias dbox-str='dropbox start'
+alias dbox-st='dropbox status'
 
