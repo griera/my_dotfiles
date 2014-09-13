@@ -48,4 +48,4 @@ alias dbox-rst='dropbox stop && dropbox start'
 alias dbox-stp='dropbox stop'
 alias dbox-str='dropbox start'
 alias dbox-st='dropbox status'
-
+alias rand4='echo $(($RANDOM%4 + 1))'
