@@ -35,12 +35,15 @@ alias update='sudo apt-get update && sudo apt-get upgrade'
 alias purge='sudo apt-get --purge'
 alias remove='sudo apt-get --remove'
 
+# Useful aliases for onePK VM's
+#alias run-onepk-vm-1.0='vmplayer ~/vmware/onepk-all-in-one-CA-20130611/onepk-all-in-one-CA-20130611.vmx'
+alias run-onepk-vm='vmplayer ~/vmware/onepk-all-in-one-VM-1.3.0.181/onepk-all-in-one-VM-1.3.0.181.vmx'
+
 # Useful aliases for frequently used commands
 alias clr='clear'
 alias x='exit'
 alias chrome='google-chrome'
 alias run-so2-vm='vmplayer ~/my_links/SO2/Ubuntu-Proso-2009/Ubuntu.vmx'
-alias run-onepk-vm='vmplayer ~/vmware/onepk-all-in-one-CA-20130611/onepk-all-in-one-CA-20130611.vmx'
 alias up-zeos='rsync -vzr --exclude=.git ~/repos/zeos/* so2-vm:~/zeos/.'
 alias dw-zeos='rsync -vzr --exclude=libjp.a so2-vm:~/zeos/* ~/repos/zeos/.'
 alias lsla='ls -la'
