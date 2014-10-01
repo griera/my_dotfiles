@@ -19,3 +19,4 @@
 	m = merge
 	d = diff
 	phom = push -u origin master
+	netitprofile = config user.email \"griera@ac.upc.edu\"
