@@ -32,8 +32,8 @@ alias mount='mount | column -t'
 
 # apt-get * commands useful aliases
 alias update='sudo apt-get update && sudo apt-get upgrade'
-alias purge='sudo apt-get --purge'
-alias remove='sudo apt-get --remove'
+alias purge='sudo apt-get purge'
+alias remove='sudo apt-get remove'
 
 # Useful aliases for onePK VM's
 #alias run-onepk-vm-1.0='vmplayer ~/vmware/onepk-all-in-one-CA-20130611/onepk-all-in-one-CA-20130611.vmx'
