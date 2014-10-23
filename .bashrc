@@ -232,9 +232,9 @@ function setprompt1 () {
     PS1="${TITLEBAR}"
 
     # First line prompt
-    PS1+="${FG_DARK_GRAY}┌─(${FG_BOLD_CYAN}\u${FG_DARK_GRAY}@${FG_BOLD_CYAN}\h"
-    PS1+="${FG_DARK_GRAY})──[${FG_BOLD_CYAN}\w${GIT_STATUS_COLOR}${git_ps1}${FG_DARK_GRAY}]${alignment}"
-    PS1+="${FG_BOLD_CYAN}${curr_date}${FG_DARK_GRAY} ]\n"
+    PS1+="${FG_DARK_WHITE}┌─(${FG_BOLD_CYAN}\u${FG_DARK_WHITE}@${FG_BOLD_CYAN}\h"
+    PS1+="${FG_DARK_WHITE})──[${FG_BOLD_CYAN}\w${GIT_STATUS_COLOR}${git_ps1}${FG_DARK_WHITE}]${alignment}"
+    PS1+="${FG_BOLD_CYAN}${curr_date}${FG_DARK_WHITE} ]\n"
 
     # Second line prompt
     PS1+="${FG_DARK_GRAY}└─(${STATUS_COLOR}\! \# ${EXIT_STATUS}${FG_DARK_GRAY}) "
