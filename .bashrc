@@ -220,9 +220,9 @@ function setprompt1 () {
     local git_ps1="$(__git_ps1)"
     if [ "x$git_ps1" != "x" ] ; then
         local GIT_STATUS_COLOR=$FG_BOLD_CYAN
-        local git_st="$(echo $git_ps1 | cut -d ' ' -f2 | tr -d ')')"
+        local git_status="$(echo $git_ps1 | cut -d ' ' -f2 | tr -d ')')"
         git_ps1=" $(echo $git_ps1 | sed 's/[\*,\+]//g' | sed 's/ )/)/g')"
-        if [ "$git_st" != "*" ]
+        if [ "$git_status" != "*" ]
         then
             GIT_STATUS_COLOR=$FG_RED
         fi
