@@ -140,7 +140,9 @@ export CDPATH=.:~/my_links:~/repos
 
 # Set up PATH variable
 export PATH=${PATH}:${ANDROID_SDK}/platform-tools:${ANDROID_SDK}/tools:\
-${ANDROID_HOME}/bin:${CUDA_HOME}/bin:~/repos/my_scripts:~/my_links/Quiniela/Programes+Scripts
+${ANDROID_HOME}/bin:${CUDA_HOME}/bin:~/repos/my_scripts:~/my_links/Quiniela/Programes+Scripts:\
+${HOME}/repos/todo.txt-cli
+
 
 # Set timestamp to display in history command, using the following format:
 # 'dd-mm-yyyy hh:mm:ss '
@@ -327,4 +329,16 @@ function rm_tr_white () {
 
 # User bash aliases are defined in ~/.bash_aliases file
 # It's sourced at line 99 of this dotfile
+
+
+#######################################
+##              OTHERS               ##
+#######################################
+
+# Enable bash completion for todo.txt-cli
+source ${HOME}/repos/todo.txt-cli/todo_completion
+
+# Keep the bash completion enabled for aliases
+complete -F _todo t
+complete -F _git g
 
