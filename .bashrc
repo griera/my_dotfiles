@@ -214,7 +214,7 @@ function setprompt1 () {
     # Set git branch color related to pending changes to commit
     local git_ps1="$(__git_ps1)"
     local GIT_STATUS_COLOR=$FG_BOLD_CYAN
-    local git_status="$(git status | grep "nothing to commit")"
+    local git_status="$(git status 2> /dev/null | grep "nothing to commit")"
     if [ "x$git_status" = "x" ] ; then
         GIT_STATUS_COLOR=$FG_RED
     fi
