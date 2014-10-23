@@ -150,11 +150,6 @@ export HISTTIMEFORMAT='%d-%m-%Y %T '
 # Erase continuous repeated entries from history
 HISTCONTROL=ignoredups
 
-# Enable __git_ps1 to show whether the repository has pending changes (+)
-# or has not (*). It's mandatory to define this variable BEFORE PS1 variable
-# in order to enable this feature properly.
-export GIT_PS1_SHOWDIRTYSTATE=1
-
 #######################################
 ##           USER VARIABLES          ##
 #######################################
@@ -218,14 +213,10 @@ function setprompt1 () {
 
     # Set git branch color related to pending changes to commit
     local git_ps1="$(__git_ps1)"
-    if [ "x$git_ps1" != "x" ] ; then
-        local GIT_STATUS_COLOR=$FG_BOLD_CYAN
-        local git_status="$(echo $git_ps1 | cut -d ' ' -f2 | tr -d ')')"
-        git_ps1=" $(echo $git_ps1 | sed 's/[\*,\+]//g' | sed 's/ )/)/g')"
-        if [ "$git_status" != "*" ]
-        then
-            GIT_STATUS_COLOR=$FG_RED
-        fi
+    local GIT_STATUS_COLOR=$FG_BOLD_CYAN
+    local git_status="$(git status | grep "nothing to commit")"
+    if [ "x$git_status" = "x" ] ; then
+        GIT_STATUS_COLOR=$FG_RED
     fi
 
     # Process to align date on top-right corner using terminal width.
