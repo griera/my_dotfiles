@@ -113,36 +113,35 @@ fi
 ##==========================================================================##
 
 #######################################
-##       ENVIRONMENT VARIABLES       ##
+##      ENVIRONMENTAL VARIABLES      ##
 #######################################
 
-# Environment variables used to work with CUDA
+# Used to work with CUDA
 export CUDA_HOME=/usr/local/cuda-5.0
 export LD_LIBRARY_PATH=${CUDA_HOME}/lib
 
-# Environment variables used to work with Android
+# Used to work with Android
 export ANDROID_HOME=/opt/android-studio
 export ANDROID_SDK=/opt/android-studio/sdk
 
-# Environment variable used by fc command in order to open vim
-# text editor instead of emacs without -e [text_editor] option
+# Used by fc command in order to open vim text editor instead of emacs without
+# -e [text_editor] option
 export FCEDIT=/usr/bin/vim
 
-# Environment variable that executes its content just before Bash displays
-# the prompt. Change it by choose one of setting prompts functions
-# implemented in "PROMPT SETTING" section
+# Executes its content (bash function) just before Bash displays the prompt.
+# Change it by choose one of setting prompts functions implemented in
+# "PROMPT SETTING" section
 export PROMPT_COMMAND=setprompt1
 
-# Environment variable that set where cd builtin finds the directory.
-# If CDPATH is set, the working directory SHOULD be the first component
-# in order to assure the proper default functioning of cd builtin
+# Set where cd builtin finds the directory. If CDPATH is set, the working
+# directory MUST BE the first component in order to assure the proper default
+# functioning of cd builtin
 export CDPATH=.:~/my_links:~/repos
 
 # Set up PATH variable
 export PATH=${PATH}:${ANDROID_SDK}/platform-tools:${ANDROID_SDK}/tools:\
 ${ANDROID_HOME}/bin:${CUDA_HOME}/bin:~/repos/my_scripts:~/my_links/Quiniela/Programes+Scripts:\
 ${HOME}/repos/todo.txt-cli:${HOME}/repos/kpcli
-
 
 # Set timestamp to display in history command, using the following format:
 # 'dd-mm-yyyy hh:mm:ss '
@@ -151,6 +150,10 @@ export HISTTIMEFORMAT='%d-%m-%Y %T '
 # Erase continuous repeated entries from history
 HISTCONTROL=ignoredups
 
+# Enable __git_ps1 to show whether the repository has pending changes (+)
+# or has not (*). It's mandatory to define this variable BEFORE PS1 variable
+# in order to enable this feature properly.
+export GIT_PS1_SHOWDIRTYSTATE=1
 
 #######################################
 ##           USER VARIABLES          ##
@@ -168,7 +171,6 @@ export DROPBOX_DIR="${MY_FOLDER}/Dropbox"
 shopt -s cdspell
 
 
-
 #######################################
 ##           PROMPT SETTING          ##
 #######################################
@@ -179,10 +181,14 @@ source ~/.bash_color_codes
 
 # Current selected prompt. It's a two line prompt like this:
 #
-# ┌─(user@hostname)──[/working_directory]────────[ hh:mm:ss ]
-# └─(hist_num_command num_command exit_status_last_command) $
+# ┌─(user@hostname)──[/working_dir (git_branch)]────────[ hh:mm:ss ]
+# └─(hist_num_cmd num_cmd exit_status_last_cmd) $
 #
 # [ hh:mm:ss ] is aligned at top right of terminal.
+#
+# If working_dir belongs to a git repository, then show the current branch
+# which you are on. Also, if the repository has no pending changes, the text
+# color will be the same as working_dir text. If not, it will be red.
 #
 # Second line change the color to red if exit status of last executed command
 # differs from 0, otherwise the color is set to green.
@@ -210,12 +216,24 @@ function setprompt1 () {
         local STATUS_COLOR=$FG_RED
     fi
 
+    # Set git branch color related to pending changes to commit
+    local git_ps1="$(__git_ps1)"
+    if [ "x$git_ps1" != "x" ] ; then
+        local GIT_STATUS_COLOR=$FG_BOLD_CYAN
+        local git_st="$(echo $git_ps1 | cut -d ' ' -f2 | tr -d ')')"
+        git_ps1=" $(echo $git_ps1 | sed 's/[\*,\+]//g' | sed 's/ )/)/g')"
+        if [ "$git_st" != "*" ]
+        then
+            GIT_STATUS_COLOR=$FG_RED
+        fi
+    fi
+
     # Process to align date on top-right corner using terminal width.
     # On prefix_aligned, -2 refers to the two brackets, whereas -4 sets a
     # litle right margin
     local curr_date="$(date +"%T")"
     local abbv_pwd=${PWD//${HOME}/"~"}
-    local left_margin="┌─($(whoami)@$(hostname))──[$abbv_pwd]"
+    local left_margin="┌─($(whoami)@$(hostname))──[$abbv_pwd$git_ps1]"
     local prefix_aligned="$(printf "%*s\n" $((${COLUMNS}-${#left_margin}-${#curr_date}-2-4)) "")"
     local alignment="${prefix_aligned// /─}[ "
 
@@ -224,7 +242,7 @@ function setprompt1 () {
 
     # First line prompt
     PS1+="${FG_DARK_GRAY}┌─(${FG_BOLD_CYAN}\u${FG_DARK_GRAY}@${FG_BOLD_CYAN}\h"
-    PS1+="${FG_DARK_GRAY})──[${FG_BOLD_CYAN}\w${FG_DARK_GRAY}]${alignment}"
+    PS1+="${FG_DARK_GRAY})──[${FG_BOLD_CYAN}\w${GIT_STATUS_COLOR}${git_ps1}${FG_DARK_GRAY}]${alignment}"
     PS1+="${FG_BOLD_CYAN}${curr_date}${FG_DARK_GRAY} ]\n"
 
     # Second line prompt
