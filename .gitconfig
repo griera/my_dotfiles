@@ -10,13 +10,15 @@
 [alias]
 	st = status
 	ph = push
-	cm = commit -m
-	cma = commit -am
-	cmam = commit --amend -m
+	cim = commit -m
+	ciam = commit -am
+	cimam = commit --amend -m
 	cl = clone
 	aa = add -A
 	f = fetch
 	m = merge
+	br = branch
 	d = diff
 	phom = push -u origin master
 	netitprofile = config user.email \"griera@ac.upc.edu\"
+	co = checkout
