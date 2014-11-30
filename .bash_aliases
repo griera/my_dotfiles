@@ -55,3 +55,4 @@ alias dbox-st='dropbox status'
 alias rand4='echo $(($RANDOM%4 + 1))'
 alias g='git'
 alias t="todo.sh -d ${HOME}/repos/todo.txt-cli-addons/todo.cfg"
+alias gcal="${HOME}/repos/gcalcli/gcalcli"
