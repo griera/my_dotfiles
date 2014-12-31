@@ -141,7 +141,7 @@ export CDPATH=.:~/my_links:~/repos
 # Set up PATH variable
 export PATH=${PATH}:${ANDROID_SDK}/platform-tools:${ANDROID_SDK}/tools:\
 ${ANDROID_HOME}/bin:${CUDA_HOME}/bin:~/repos/my_scripts:~/my_links/Quiniela/Programes+Scripts:\
-${HOME}/repos/todo.txt-cli:${HOME}/repos/kpcli
+${HOME}/repos/kpcli
 
 # Set timestamp to display in history command, using the following format:
 # 'dd-mm-yyyy hh:mm:ss '
