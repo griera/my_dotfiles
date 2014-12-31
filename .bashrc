@@ -344,10 +344,6 @@ function rm_tr_white () {
 ##              OTHERS               ##
 #######################################
 
-# Enable bash completion for todo.txt-cli
-source ${HOME}/repos/todo.txt-cli/todo_completion
-
 # Keep the bash completion enabled for aliases
-complete -F _todo t
 complete -F _git g
 
