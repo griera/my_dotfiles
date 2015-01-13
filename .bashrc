@@ -138,6 +138,9 @@ export PROMPT_COMMAND=setprompt1
 # functioning of cd builtin
 export CDPATH=.:~/my_links:~/repos
 
+# To edit a file with vim being viewed with less pager (by pressing v)
+export EDITOR=vim
+
 # Set up PATH variable
 export PATH=${PATH}:${ANDROID_SDK}/platform-tools:${ANDROID_SDK}/tools:\
 ${ANDROID_HOME}/bin:${CUDA_HOME}/bin:~/repos/my_scripts:~/my_links/Quiniela/Programes+Scripts:\
