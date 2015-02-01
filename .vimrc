@@ -24,4 +24,3 @@ nnoremap <C-l><C-n> :call Switch_line_number_mode()<cr>
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
-

@@ -1,12 +1,11 @@
-.bash_aliases /home/griera/.bash_aliases
 .bash_color_codes /home/griera/.bash_color_codes
-.bash_history /home/griera/.bash_history
-.bash_logout /home/griera/.bash_logout
-.bash_profile /home/griera/.bash_profile
 .bashrc /home/griera/.bashrc
-.dmrc /home/griera/.dmrc
 .gitconfig /home/griera/.gitconfig
 .profile /home/griera/.profile
 .screenrc /home/griera/.screenrc
-.ssh /home/griera/.ssh
 .vimrc /home/griera/.vimrc
+.xinitrc /home/griera/.xinitrc
+.Xresources /home/griera/.Xresources
+btsync.config /home/griera/bittorrent_sync/btsync.config
+config /home/griera/.i3/config
+terminal_themes /home/griera/terminal_themes
