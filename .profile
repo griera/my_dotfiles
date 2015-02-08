@@ -37,6 +37,10 @@ export HISTFILESIZE=2000
 # 'dd-mm-yyyy hh:mm:ss '
 export HISTTIMEFORMAT='%d-%m-%Y %T '
 
+# A colon-separated list of patterns used to decide which command lines should
+# not be saved on the bash history
+HISTIGNORE='c:l'
+
 # Use less or most command as a pager.
 export PAGER=less
 
@@ -44,12 +48,16 @@ export PAGER=less
 # -e [text_editor] option.
 export FCEDIT=vim
 
-# To edit a file with vim being viewed with less pager (by pressing v).
+# To edit a file with vim being viewed with the less pager (by pressing v).
 export EDITOR=vim
 
 # Colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
+# When compiling an application in the Linux* environment on the DPDK, the
+# following variables must be exported
+export RTE_SDK=$HOME/dpdk
+export RTE_TARGET=x86_64-native-linuxapp-gcc
 
 #######################################
 ##              OTHERS               ##
