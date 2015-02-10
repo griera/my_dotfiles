@@ -9,25 +9,25 @@
 #umask 022
 
 #######################################
-##       ENVIRONMENT VARIABLES       ##
+##      ENVIRONMENTAL VARIABLES      ##
 #######################################
 
-export PATH="$PATH:/sbin:/usr/sbin:~/bittorrent_sync:~/.dropbox-dist"
+PATH="$PATH:/sbin:/usr/sbin:~/bittorrent_sync:~/.dropbox-dist"
+PATH="$PATH:/media/DADES/My_Folder/Quiniela/Programes+Scripts/"
+PATH="$PATH:~/repos/my_scripts"
+export $PATH
 
 # Set where cd builtin finds the directory. If CDPATH is set, the working
 # directory MUST BE the first component in order to assure the proper
 # functioning of cd builtin
-export CDPATH=.:/media/DADES/My_Folder
+export CDPATH=".:/media/DADES/My_Folder:~/repos"
 
 # Execute its content (bash function) just before Bash displays the prompt.
 # See "PROMPT SETTING" section in ~/.bashrc for more information.
 export PROMPT_COMMAND=set_prompt1
 
-# Don't put duplicate lines or lines starting with space in the history.
-#export HISTCONTROL=ignoreboth
-
-# Eliminate continuous repeated entries from history.
-export HISTCONTROL=ignoredups
+# Removes from history all previous line matching the current line.
+export HISTCONTROL=erasedups
 
 # For setting history length see HISTSIZE and HISTFILESIZE in bash(1).
 export HISTSIZE=1000

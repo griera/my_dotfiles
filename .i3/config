@@ -161,12 +161,9 @@ bar {
 # Load Xterm configuration
 exec --no-startup-id xrdb -merge ~/.Xresources
 
-# Start Dropbox and Bittorrent Sync daemons
-exec --no-startup-id ~/.dropbox-dist/dropbox.py start
-exec --no-startup-id ~/bittorrent_sync/btsync --config ~/bittorrent_sync/btsync.config
-
 # Start xcompmgr, a sample X compositing manager
 exec --no-startup-id xcompmgr -c -f -F -n
 
-# Show a nice wallpaper :)
-exec --no-startup-id feh --big-fill /media/DADES/My_Folder/dark-pattern-1920x1080.jpg
+exec --no-startup-id ~/.dropbox-dist/dropbox.py start
+exec --no-startup-id ~/bittorrent_sync/btsync --config ~/bittorrent_sync/btsync.config
+exec --no-startup-id i3-sensible-terminal
