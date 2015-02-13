@@ -12,10 +12,10 @@
 ##      ENVIRONMENTAL VARIABLES      ##
 #######################################
 
-PATH="$PATH:/sbin:/usr/sbin:~/bittorrent_sync:~/.dropbox-dist"
-PATH="$PATH:/media/DADES/My_Folder/Quiniela/Programes+Scripts/"
-PATH="$PATH:~/repos/my_scripts"
-export $PATH
+PATH="${PATH}:/sbin:/usr/sbin:~/bittorrent_sync:~/.dropbox-dist"
+PATH="${PATH}:/media/DADES/My_Folder/Quiniela/Programes+Scripts"
+PATH="${PATH}:~/repos/my_scripts"
+export ${PATH}
 
 # Set where cd builtin finds the directory. If CDPATH is set, the working
 # directory MUST BE the first component in order to assure the proper
@@ -39,7 +39,7 @@ export HISTTIMEFORMAT='%d-%m-%Y %T '
 
 # A colon-separated list of patterns used to decide which command lines should
 # not be saved on the bash history
-HISTIGNORE='c:l'
+export HISTIGNORE='c:l'
 
 # Use less or most command as a pager.
 export PAGER=less
@@ -57,7 +57,7 @@ export EDITOR=vim
 # When compiling an application in the Linux* environment on the DPDK, the
 # following variables must be exported
 export RTE_SDK=$HOME/dpdk
-export RTE_TARGET=x86_64-native-linuxapp-gcc
+export RTE_TARGET=x86_64-ivshmem-linuxapp-gcc
 
 #######################################
 ##              OTHERS               ##

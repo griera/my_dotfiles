@@ -1,7 +1,7 @@
 ! Selected terminal theme
 #include "terminal_themes/monokai"
 
-! Use a nice truetype font and size by default... 
+! Use a nice truetype font and size by default...
 xterm*faceName: DejaVu Sans Mono Book
 xterm*faceSize: 11
 

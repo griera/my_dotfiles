@@ -134,40 +134,26 @@ function mkdircd () {
 
 # Searches the command given as an argument inside bash history
 # and output those entries that match to it
-function srchcmd () {
-    [ $# -eq 0 ] && echo "Usage: srchcmd [cmd_to_search]" && return 1
+function hsrch () {
     history | grep "$@"
-}
-
-# Shows the IP assigned on the given interface
-function ifaceip () {
-    [ $# -eq 0 ] && echo "Usage: ifaceip [iface]" && return 1
-    ifconfig $1 | awk '/inet addr/ {print $2}' | awk -F: '{print $2}'
-
-    # Alternative solution
-    # ifconfig $1 | grep "inet addr" | cut -d ':' -f2 | cut -d ' ' -f1
 }
 
 # Checks if the given argument is a well formed IP at syntax level
 function isanip () {
     if [[ $1 =~ ^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$ ]] ; then
-
         local BAK_IFS=$IFS
         IFS='.'
         local ip=($1)
         IFS=$BAK_IFS
-
         if [[ ${ip[0]} -le 255 && ${ip[1]} -le 255 \
             && ${ip[2]} -le 255 && ${ip[3]} -le 255 ]]
         then
             echo "$1 is a valid IP"
             return 0
-
         else
             echo "$1 is not a valid IP"
             return 1
         fi
-
     else
         echo "$1 is not a valid IP"
         return 1
@@ -176,11 +162,6 @@ function isanip () {
 
 # Resolves domain names to their IPs and viceversa
 function dnsres () {
-    if [ $# -ne 1 ] ; then
-        echo "Usage: dnsres [name_or_IP]"
-        return 1
-    fi
-
     local output="$(nslookup $1)"
     local error="$(echo "$output" | grep ^[*][*])"
 
@@ -191,7 +172,7 @@ function dnsres () {
     if [ $? -eq 0 ] ; then
 
         # sed -e 's/.$//' -e 's/^[ \t]*//' removes the last character
-        # (special single character '.' in regexp) and all leading 
+        # (special single character '.' in regexp) and all leading
         # whitespaces, including tabs
         local res="$(echo "$output" | grep name | cut -d '=' -f2 | sed -e 's/.$//' -e 's/^[\t]*//')"
 
@@ -205,8 +186,16 @@ function dnsres () {
 
 # Removes trailing whitespaces for an entire directory.
 # It ignores .git an .svn folders and their contents.
-function rm_tr_white () {
-    find . -not \( -name .svn -prune -o -name .git -prune -o -name '*.a' \) -type f -print0 | xargs -0 sed -i -e "s/[[:space:]]*$//"
+function rm_trailw () {
+    if [ "x$1" = "x" ] ; then
+        path="."
+    else
+        path="$1"
+    fi
+
+    find $path -not \
+        \( -name .svn -prune -o -name .git -prune -o -name '*.a' \) \
+        -type f -print0 | xargs -0 sed -i -e "s/[[:space:]]*$//"
 }
 
 #######################################
@@ -226,9 +215,6 @@ alias cdabs='cd $(pwd -P)'
 alias shutdown='sudo shutdown -h now'
 alias reboot='sudo shutdown -r now'
 
-# list all functions defined on ~/.bashrc
-alias lsfuncs="grep ^function ~/.bashrc | cut -d ' ' -f2 | sort"
-
 # history command useful aliases
 alias h1='history 10'
 alias h2='history 20'
@@ -236,11 +222,8 @@ alias h3='history 30'
 alias h4='history 40'
 alias h5='history 50'
 
-# mount command useful aliases
-alias mount='mount | column -t'
-
-# apt-get * command useful aliases
-alias update='sudo apt-get update && sudo apt-get upgrade'
+# apt-get command useful aliases
+alias upgrade='sudo apt-get update && sudo apt-get upgrade'
 alias purge='sudo apt-get purge'
 alias remove='sudo apt-get remove'
 alias install='sudo apt-get install'
@@ -253,14 +236,17 @@ alias vdir='vdir --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
+alias mount='mount | column -t'
 alias c='clear'
 alias x='exit'
 alias chrome='google-chrome'
 alias rand4='echo $(($RANDOM%4 + 1))'
 alias g='git'
-alias btsync="btsync --config ~/bittorrent_sync/btsync.config"
-alias dbox="dropbox.py"
+alias btsync='btsync --config ~/bittorrent_sync/btsync.config'
+alias dbox='dropbox.py'
 
+# Useful alias for DPDK environment
+alias dpdk_nic_bind="sudo ${RTE_SDK}/tools/dpdk_nic_bind.py"
 
 #######################################
 ##              OTHERS               ##
@@ -269,4 +255,3 @@ alias dbox="dropbox.py"
 # Keep the bash completion enabled for git alias
 . /usr/share/bash-completion/completions/git
 complete -F _git g
-

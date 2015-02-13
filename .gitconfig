@@ -10,15 +10,14 @@
 [alias]
     st = status
     ph = push
-    cim = commit -m
-    ciam = commit -am
-    cimam = commit --amend -m
+    cm = commit -am
+    cam = commit --amend -m
     cl = clone
     aa = add -A
     f = fetch
     m = merge
     br = branch
-    d = diff
+    df = diff
     phom = push -u origin master
     starflow = config user.email \"griera@starflownetworks.com\"
     co = checkout

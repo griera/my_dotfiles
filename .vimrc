@@ -8,8 +8,9 @@ set softtabstop=4
 set shiftwidth=4
 set showmatch
 set relativenumber
+set mouse=nvh
 
-"Vim fucntion to quickly switch between relative and absolute line number"
+"Vim function to quickly switch between relative and absolute line number"
 function! Switch_line_number_mode()
     if (&relativenumber == 1)
         set number
@@ -19,6 +20,8 @@ function! Switch_line_number_mode()
 endfunc
 
 nnoremap <C-l><C-n> :call Switch_line_number_mode()<cr>
+noremap <MiddleMouse> <LeftMouse><MiddleMouse>
+noremap <LeftRelease> <LeftRelease>y
 
 "Vim jumps to the last position when reopening a file"
 if has("autocmd")
