@@ -166,4 +166,4 @@ exec --no-startup-id xcompmgr -c -f -F -n
 
 exec --no-startup-id ~/.dropbox-dist/dropbox.py start
 exec --no-startup-id ~/bittorrent_sync/btsync --config ~/bittorrent_sync/btsync.config
-exec --no-startup-id i3-sensible-terminal
+exec --no-startup-id sleep 0.2 && i3-sensible-terminal
