@@ -1,11 +1,12 @@
 .bash_color_codes /home/griera/.bash_color_codes
 .bashrc /home/griera/.bashrc
+btsync.config /home/griera/bittorrent_sync/btsync.config
+config /home/griera/.i3/config
 .gitconfig /home/griera/.gitconfig
 .profile /home/griera/.profile
 .screenrc /home/griera/.screenrc
+terminal_themes /home/griera/terminal_themes
+.vim /home/griera/.vim
 .vimrc /home/griera/.vimrc
 .xinitrc /home/griera/.xinitrc
 .Xresources /home/griera/.Xresources
-btsync.config /home/griera/bittorrent_sync/btsync.config
-config /home/griera/.i3/config
-terminal_themes /home/griera/terminal_themes
