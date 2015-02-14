@@ -1,3 +1,4 @@
+"General options
 set laststatus=2
 set showmode
 set wrap
@@ -9,6 +10,12 @@ set shiftwidth=4
 set showmatch
 set relativenumber
 set mouse=nvh
+
+"Appearance options
+syntax on
+colorscheme molokai
+let g:molokai_original=0
+set t_Co=256
 
 "Vim function to quickly switch between relative and absolute line number"
 function! Switch_line_number_mode()
