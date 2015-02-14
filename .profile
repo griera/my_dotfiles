@@ -13,9 +13,9 @@
 #######################################
 
 PATH="${PATH}:/sbin:/usr/sbin:~/bittorrent_sync:~/.dropbox-dist"
-PATH="${PATH}:/media/DADES/My_Folder/Quiniela/Programes+Scripts"
+PATH="${PATH}:/media/DADES/My_Folder/Quiniela/scripts"
 PATH="${PATH}:~/repos/my_scripts"
-export ${PATH}
+export PATH
 
 # Set where cd builtin finds the directory. If CDPATH is set, the working
 # directory MUST BE the first component in order to assure the proper
@@ -37,25 +37,27 @@ export HISTFILESIZE=2000
 # 'dd-mm-yyyy hh:mm:ss '
 export HISTTIMEFORMAT='%d-%m-%Y %T '
 
-# A colon-separated list of patterns used to decide which command lines should
-# not be saved on the bash history
+# A colon-separated list of patterns used to decide which
+# command lines should not be saved on the bash history.
 export HISTIGNORE='c:l'
 
 # Use less or most command as a pager.
 export PAGER=less
 
-# Used by fc command in order to open vim text editor instead of emacs without
+# Used by fc command in order to open vim instead of emacs without
 # -e [text_editor] option.
 export FCEDIT=vim
 
-# To edit a file with vim being viewed with the less pager (by pressing v).
+# To edit a file with vim being viewed with the less (by pressing v).
 export EDITOR=vim
 
 # Colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+#GCC_COLORS="error=01;31:warning=01;35:note=01;36"
+#GCC_COLORS="${GCC_COLORS}:caret=01;32:locus=01:quote=01"
+#export GCC_COLORS
 
-# When compiling an application in the Linux* environment on the DPDK, the
-# following variables must be exported
+# When compiling an application in the Linux* environment on the DPDK,
+# the following variables must be exported
 export RTE_SDK=$HOME/dpdk
 export RTE_TARGET=x86_64-ivshmem-linuxapp-gcc
 
