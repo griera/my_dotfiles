@@ -2,7 +2,7 @@
 #include "terminal_themes/monokai"
 
 ! Use a nice truetype font and size by default...
-xterm*faceName: DejaVu Sans Mono Book
+xterm*faceName: DejaVu Sans Mono for Powerline
 xterm*faceSize: 11
 
 ! Not all shells are login shell by default
@@ -17,4 +17,4 @@ xterm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
 ! Stop output to terminal from jumping down to bottom of scroll again
 xterm*scrollTtyOutput: false
 
-xterm*cursorBlink: true
+xterm*cursorBlink: false

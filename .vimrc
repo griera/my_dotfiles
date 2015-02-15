@@ -54,6 +54,9 @@ Plugin 'bling/vim-airline'
 " Awesome syntax checking
 Plugin 'scrooloose/syntastic'
 
+" Awesome Git wrapper
+Plugin 'tpope/vim-fugitive'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -82,38 +85,47 @@ filetype plugin indent on    " required
 " Most of this configurations are based on this article:
 " http://items.sjbach.com/319/configuring-vim-right
 
-set laststatus=2
-
 " By default, Vim only remembers the last 20 commands
 " and search patterns entered.
 set history=1000
 
-" Enables limited line numbering in a buffer (line, column, %).
+" Enables limited line numbering in a buffer.
+" Format is: (line, column, %).
 set ruler
 
 " Shows current mode down the bottom.
 set showmode
 
+" When a bracket is inserted, briefly jump to the matching one.
 set showmatch
 
 " Shows incomplete cmds down the bottom.
 set showcmd
 
-" Reload files changed outside vim.
+" Reloads files changed outside vim.
 set autoread
 
 " Sets title when vim runs within an xterm.
 set title
 
-" Search options.
-set ignorecase 
-set smartcase
-set hlsearch
-set incsearch
-
 " Allows Vim to manage multiple buffers effectively.
 " Buffers can exist in the background without being in a windows.
 set hidden
+
+" Search options
+"""""""""""""""""""""""""""""""""""""""
+
+set ignorecase
+
+set smartcase
+
+set hlsearch
+
+set incsearch
+
+
+" Complteion options
+"""""""""""""""""""""""""""""""""""""""
 
 " Pressing <TAB> shows all options for the completion.
 set wildmenu
@@ -121,19 +133,22 @@ set wildmenu
 " Completion options (similarly how it works in a shell).
 set wildmode=list:longest
 
-" Stuff to ignore when tab completing
+" Stuff to ignore when tab completing.
 set wildignore=*.o,*.obj,*~
 set wildignore+=*.png,*.jpg,*.gif
 
-" Shows relative line numbers and the absolute line number of cursor
+" Shows relative line numbers and the absolute line number of cursor.
 set relativenumber
 set number
 
 " Wrapping options
+"""""""""""""""""""""""""""""""""""""""
 set wrap
 set wrapmargin=5
 
-" Indentation options (by default).
+
+" Indentation options (by default)
+"""""""""""""""""""""""""""""""""""""""
 set expandtab
 set tabstop=4
 set softtabstop=4
@@ -142,15 +157,19 @@ set autoindent
 set smartindent
 set smarttab
 
-set mouse=nvh
-set encoding=utf-8
-set ttimeoutlen=50
+" Enables the use of the mouse for Normal and Visual modes.
+set mouse=nv
+
+" The screen will not be redrawn while executing macros,
+" registers and other commands that have not been typed.
+set lazyredraw
 
 " Appearance options.
-"let g:airline_powerline_fonts=1
+"""""""""""""""""""""""""""""""""""""""
 set background=dark
 set t_Co=256
 syntax on
+let g:molokai_original=0
 colorscheme molokai
 
 noremap <MiddleMouse> <LeftMouse><MiddleMouse>
@@ -158,6 +177,33 @@ noremap <LeftRelease> <LeftRelease>y
 
 " =============================================================================
 " End general configuration
+" =============================================================================
+
+" =============================================================================
+" Start plugins configurations
+" =============================================================================
+
+" vim-airline
+"""""""""""""""""""""""""""""""""""""""
+" Sets the statusline appearing all the time.
+set laststatus=2
+
+" Avoid the delay when leaving Insert mode.
+set ttimeoutlen=50
+
+" Sets powerline font symbols showing up properly. It's mandatory to patch the
+" font you use in your terminal. To download an already font patched pack:
+" https://github.com/powerline/fonts
+"
+" For installation instructions:
+" https://powerline.readthedocs.org/en/latest/installation/linux.html#font-installation
+set encoding=utf-8
+let g:airline_powerline_fonts=1
+
+let g:airline_theme='murmur'
+
+" =============================================================================
+" End plugins configuration
 " =============================================================================
 
 " Jumps to the last position when reopening a file"
