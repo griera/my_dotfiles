@@ -143,8 +143,11 @@ set smartindent
 set smarttab
 
 set mouse=nvh
+set encoding=utf-8
+set ttimeoutlen=50
 
 " Appearance options.
+"let g:airline_powerline_fonts=1
 set background=dark
 set t_Co=256
 syntax on
