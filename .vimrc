@@ -48,7 +48,7 @@ Plugin 'scrooloose/nerdtree.git'
 " Color scheme pack
 Plugin 'flazz/vim-colorschemes'
 
-" Status bar
+" Status line bar
 Plugin 'bling/vim-airline'
 
 " Awesome syntax checking
@@ -56,6 +56,9 @@ Plugin 'scrooloose/syntastic'
 
 " Awesome Git wrapper
 Plugin 'tpope/vim-fugitive'
+
+" Implements some of TextMate's snippets features
+Plugin 'msanders/snipmate.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -85,10 +88,6 @@ filetype plugin indent on    " required
 " Most of this configurations are based on this article:
 " http://items.sjbach.com/319/configuring-vim-right
 
-" By default, Vim only remembers the last 20 commands
-" and search patterns entered.
-set history=1000
-
 " Enables limited line numbering in a buffer.
 " Format is: (line, column, %).
 set ruler
@@ -105,41 +104,39 @@ set showcmd
 " Reloads files changed outside vim.
 set autoread
 
-" Sets title when vim runs within an xterm.
-set title
-
 " Allows Vim to manage multiple buffers effectively.
 " Buffers can exist in the background without being in a windows.
 set hidden
 
+" The screen will not be redrawn while executing macros,
+" registers and other commands that have not been typed.
+set lazyredraw
+
+set title
+set mouse=nv
+set relativenumber
+set number
+set history=1000
+
+
 " Search options
 """""""""""""""""""""""""""""""""""""""
-
 set ignorecase
-
 set smartcase
-
+set incsearch
 set hlsearch
 
-set incsearch
+" Press return to temporarily get out of the highlighted search.
+nnoremap <CR> :nohlsearch<CR><CR>
 
 
-" Complteion options
+" Completion options
 """""""""""""""""""""""""""""""""""""""
-
-" Pressing <TAB> shows all options for the completion.
 set wildmenu
-
-" Completion options (similarly how it works in a shell).
 set wildmode=list:longest
-
-" Stuff to ignore when tab completing.
 set wildignore=*.o,*.obj,*~
 set wildignore+=*.png,*.jpg,*.gif
 
-" Shows relative line numbers and the absolute line number of cursor.
-set relativenumber
-set number
 
 " Wrapping options
 """""""""""""""""""""""""""""""""""""""
@@ -149,22 +146,16 @@ set wrapmargin=5
 
 " Indentation options (by default)
 """""""""""""""""""""""""""""""""""""""
-set expandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set autoindent
 set smartindent
+set expandtab
 set smarttab
 
-" Enables the use of the mouse for Normal and Visual modes.
-set mouse=nv
 
-" The screen will not be redrawn while executing macros,
-" registers and other commands that have not been typed.
-set lazyredraw
-
-" Appearance options.
+" Appearance options
 """""""""""""""""""""""""""""""""""""""
 set background=dark
 set t_Co=256
@@ -172,8 +163,12 @@ syntax on
 let g:molokai_original=0
 colorscheme molokai
 
+
+" Mapping options
+"""""""""""""""""""""""""""""""""""""""
 noremap <MiddleMouse> <LeftMouse><MiddleMouse>
 noremap <LeftRelease> <LeftRelease>y
+
 
 " =============================================================================
 " End general configuration
