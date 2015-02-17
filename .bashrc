@@ -247,6 +247,7 @@ alias dbox='dropbox.py'
 
 # Useful alias for DPDK environment
 alias dpdk_nic_bind="sudo ${RTE_SDK}/tools/dpdk_nic_bind.py"
+alias dpdk_setup="~/repos/dpdk_training/tools/dpdk_setup.sh"
 
 #######################################
 ##              OTHERS               ##
