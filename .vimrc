@@ -60,6 +60,9 @@ Plugin 'tpope/vim-fugitive'
 " Implements some of TextMate's snippets features
 Plugin 'msanders/snipmate.vim'
 
+" A code-completion engine
+"Plugin 'Valloric/YouCompleteMe'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -111,6 +114,9 @@ set hidden
 " The screen will not be redrawn while executing macros,
 " registers and other commands that have not been typed.
 set lazyredraw
+
+" Makes backspace work like most other apps
+set backspace=indent,eol,start
 
 set title
 set mouse=nv
