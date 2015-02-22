@@ -123,7 +123,9 @@ set mouse=nv
 set relativenumber
 set number
 set history=1000
-
+set textwidth=80
+set colorcolumn=80
+set wrap
 
 " Search options
 """""""""""""""""""""""""""""""""""""""
@@ -142,12 +144,6 @@ set wildmenu
 set wildmode=list:longest
 set wildignore=*.o,*.obj,*~
 set wildignore+=*.png,*.jpg,*.gif
-
-
-" Wrapping options
-"""""""""""""""""""""""""""""""""""""""
-set wrap
-set wrapmargin=5
 
 
 " Indentation options (by default)
