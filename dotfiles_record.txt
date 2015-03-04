@@ -1,6 +1,5 @@
 .bash_color_codes /home/griera/.bash_color_codes
 .bashrc /home/griera/.bashrc
-btsync.config /home/griera/bittorrent_sync/btsync.config
 config /home/griera/.i3/config
 .gitconfig /home/griera/.gitconfig
 .profile /home/griera/.profile
