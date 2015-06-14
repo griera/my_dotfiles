@@ -174,15 +174,46 @@ noremap <LeftRelease> <LeftRelease>y
 
 " Commenting blocks of code.
 """""""""""""""""""""""""""""""""""""""
-autocmd FileType c,cpp,java,scala let b:comment_leader = '//'
-autocmd FileType sh,ruby,python   let b:comment_leader = '#'
-autocmd FileType conf,fstab       let b:comment_leader = '#'
-autocmd FileType tex              let b:comment_leader = '%'
-autocmd FileType mail             let b:comment_leader = '>'
-autocmd FileType vim              let b:comment_leader = '"'
+" Grouping related autocommands is intended to improve Vim performance. This tip
+" is well explained at: 
+" - http://learnvimscriptthehardway.stevelosh.com/chapters/14.html
+"
+" This solution can be found at:
+" - https://stackoverflow.com/questions/1676632/whats-a-quick-way-to-comment-uncomment-lines-in-vim
+
+augroup filetype_c_cpp_java_scala
+    autocmd!
+    autocmd FileType c,cpp,java,scala let b:comment_leader = '//'
+augroup END
+
+augroup filetype_sh_ruby_python
+    autocmd!
+    autocmd FileType sh,ruby,python let b:comment_leader = '#'
+augroup END
+
+augroup filetype_conf_fstab
+    autocmd!
+    autocmd FileType conf,fstab let b:comment_leader = '#'
+augroup END
+
+augroup filetype_tex
+    autocmd!
+    autocmd FileType tex let b:comment_leader = '%'
+augroup END
+
+augroup filetype_mail
+    autocmd!
+    autocmd FileType mail let b:comment_leader = '>'
+augroup END
+
+augroup filetype_vim
+    autocmd!
+    autocmd FileType vim let b:comment_leader = '"'
+augroup END
 
 noremap <silent> ,cc :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
 noremap <silent> ,cu :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
+
 
 " =============================================================================
 " End general configuration
