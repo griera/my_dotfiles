@@ -172,14 +172,20 @@ noremap <MiddleMouse> <LeftMouse><MiddleMouse>
 noremap <LeftRelease> <LeftRelease>y
 
 
-" Commenting blocks of code.
+" File type specific configurations
 """""""""""""""""""""""""""""""""""""""
 " Grouping related autocommands is intended to improve Vim performance. This tip
-" is well explained at: 
+" is well explained at:
 " - http://learnvimscriptthehardway.stevelosh.com/chapters/14.html
 "
 " This solution can be found at:
 " - https://stackoverflow.com/questions/1676632/whats-a-quick-way-to-comment-uncomment-lines-in-vim
+
+augroup filetype_gitcommit
+    autocmd!
+    autocmd FileType gitcommit let b:comment_leader = '#'
+    autocmd Filetype gitcommit setlocal spell textwidth=72 colorcolumn=72
+augroup END
 
 augroup filetype_c_cpp_java_scala
     autocmd!

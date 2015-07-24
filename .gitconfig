@@ -1,5 +1,5 @@
 [user]
-    name = griera
+	name = Genis Riera Perez
     email = genis.riera.perez@gmail.com
 [core]
     editor = vim
@@ -11,8 +11,8 @@
     st = status
     ph = push
     pl = pull
-    cm = commit -am
-    cam = commit --amend -m
+    cm = commit -a
+    cam = commit --amend
     cl = clone
     aa = add -A
     f = fetch
