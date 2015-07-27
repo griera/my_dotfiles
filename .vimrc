@@ -183,23 +183,58 @@ noremap <LeftRelease> <LeftRelease>y
 
 augroup filetype_gitcommit
     autocmd!
+    autocmd FileType gitcommit autocmd BufWritePre <buffer> :%s/\s\+$//e
     autocmd FileType gitcommit let b:comment_leader = '#'
     autocmd Filetype gitcommit setlocal spell textwidth=72 colorcolumn=72
 augroup END
 
-augroup filetype_c_cpp_java_scala
+augroup filetype_c
     autocmd!
-    autocmd FileType c,cpp,java,scala let b:comment_leader = '//'
+    autocmd FileType c autocmd BufWritePre <buffer> :%s/\s\+$//e
+    autocmd FileType c let b:comment_leader = '//'
 augroup END
 
-augroup filetype_sh_ruby_python
+augroup filetype_cpp
     autocmd!
-    autocmd FileType sh,ruby,python let b:comment_leader = '#'
+    autocmd FileType cpp autocmd BufWritePre <buffer> :%s/\s\+$//e
+    autocmd FileType cpp let b:comment_leader = '//'
 augroup END
 
-augroup filetype_conf_fstab
+augroup filetype_java
     autocmd!
-    autocmd FileType conf,fstab let b:comment_leader = '#'
+    autocmd FileType java autocmd BufWritePre <buffer> :%s/\s\+$//e
+    autocmd FileType java let b:comment_leader = '//'
+augroup END
+
+augroup filetype_scala
+    autocmd!
+    autocmd FileType scala let b:comment_leader = '//'
+augroup END
+
+augroup filetype_sh
+    autocmd!
+    autocmd FileType sh autocmd BufWritePre <buffer> :%s/\s\+$//e
+    autocmd FileType sh let b:comment_leader = '#'
+augroup END
+
+augroup filetype_ruby
+    autocmd!
+    autocmd FileType ruby let b:comment_leader = '#'
+augroup END
+
+augroup filetype_python
+    autocmd!
+    autocmd FileType python let b:comment_leader = '#'
+augroup END
+
+augroup filetype_conf
+    autocmd!
+    autocmd FileType conf let b:comment_leader = '#'
+augroup END
+
+augroup filetype_fstab
+    autocmd!
+    autocmd FileType fstab let b:comment_leader = '#'
 augroup END
 
 augroup filetype_tex
