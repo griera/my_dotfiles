@@ -224,7 +224,8 @@ augroup END
 
 augroup filetype_python
     autocmd!
-    autocmd FileType python let b:comment_leader = '#'
+    autocmd FileType python autocmd BufWritePre <buffer> :%s/\s\+$//e
+    autocmd FileType python let b:comment_leader = '# '
 augroup END
 
 augroup filetype_conf
