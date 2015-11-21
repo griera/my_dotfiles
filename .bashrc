@@ -244,6 +244,7 @@ alias chrome='google-chrome'
 alias rand4='echo $(($RANDOM%4 + 1))'
 alias g='git'
 alias dbox='dropbox.py'
+alias xbindkeys_restart='killall -HUP xbindkeys'
 
 # Useful alias for DPDK environment
 alias dpdk_nic_bind="sudo ${RTE_SDK}/tools/dpdk_nic_bind.py"
