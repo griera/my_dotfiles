@@ -118,7 +118,12 @@ set lazyredraw
 " Makes backspace work like most other apps
 set backspace=indent,eol,start
 
+" Maintain more context around the cursor
+set scrolloff=3
+
+" Set the terminal title
 set title
+
 set mouse=nv
 set relativenumber
 set number
@@ -133,9 +138,6 @@ set ignorecase
 set smartcase
 set incsearch
 set hlsearch
-
-" Press return to temporarily get out of the highlighted search.
-nnoremap <CR> :nohlsearch<CR><CR>
 
 
 " Completion options
@@ -170,6 +172,11 @@ colorscheme molokai
 """""""""""""""""""""""""""""""""""""""
 noremap <MiddleMouse> <LeftMouse><MiddleMouse>
 noremap <LeftRelease> <LeftRelease>y
+nnoremap <C-e> 3<C-e>
+nnoremap <C-y> 3<C-y>
+
+" Press return to temporarily get out of the highlighted search.
+nnoremap <CR> :nohlsearch<CR><CR>
 
 
 " File type specific configurations
