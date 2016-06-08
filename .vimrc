@@ -45,11 +45,18 @@ Plugin 'gmarik/Vundle.vim'
 " File navigator gutter
 Plugin 'scrooloose/nerdtree.git'
 
+" A plugin of NERDTree showing git status flags
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+
 " Color scheme pack
 Plugin 'flazz/vim-colorschemes'
 
 " Status line bar
-Plugin 'bling/vim-airline'
+" Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+
+" Official theme repository for vim-airline
+Plugin 'vim-airline/vim-airline-themes'
 
 " Awesome syntax checking
 Plugin 'scrooloose/syntastic'
@@ -59,9 +66,6 @@ Plugin 'tpope/vim-fugitive'
 
 " Implements some of TextMate's snippets features
 Plugin 'msanders/snipmate.vim'
-
-" A code-completion engine
-"Plugin 'Valloric/YouCompleteMe'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -178,6 +182,8 @@ nnoremap <C-y> 3<C-y>
 " Press return to temporarily get out of the highlighted search.
 nnoremap <CR> :nohlsearch<CR><CR>
 
+" Sets shortcut to open/close NERDTree
+map <C-n> :NERDTreeToggle<CR>
 
 " File type specific configurations
 """""""""""""""""""""""""""""""""""""""
@@ -280,7 +286,7 @@ set laststatus=2
 " Avoid the delay when leaving Insert mode.
 set ttimeoutlen=50
 
-" Sets powerline font symbols showing up properly. It's mandatory to patch the
+" Sets airline font symbols showing up properly. It's mandatory to patch the
 " font you use in your terminal. To download an already font patched pack:
 " https://github.com/powerline/fonts
 "
@@ -289,7 +295,25 @@ set ttimeoutlen=50
 set encoding=utf-8
 let g:airline_powerline_fonts=1
 
+" Sets airline theme
 let g:airline_theme='murmur'
+
+
+" nerdtree-git-plugin
+"""""""""""""""""""""""""""""""""""""""
+" Sets the variable to change symbols.
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ "Unknown"   : "?"
+    \ }
+
 
 " =============================================================================
 " End plugins configuration
