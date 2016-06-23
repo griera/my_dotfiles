@@ -1,5 +1,5 @@
 [user]
-	name = Genis Riera Perez
+    name = Genis Riera Perez
     email = genis.riera.perez@gmail.com
 [core]
     editor = vim
@@ -23,3 +23,4 @@
     starflow = config user.email \"griera@starflownetworks.com\"
     co = checkout
     lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an <%ae>%C(reset)' --all
+    lgf = log --follow -p --
