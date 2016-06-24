@@ -252,6 +252,7 @@ alias chrome='google-chrome'
 alias rand4='echo $(($RANDOM%4 + 1))'
 alias g='git'
 alias dbox='dropbox.py'
+alias btsync='btsync --storage ~/bittorrent_sync'
 alias xbindkeys_restart='killall -HUP xbindkeys'
 
 # Useful alias for DPDK environment
