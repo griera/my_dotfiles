@@ -67,7 +67,7 @@ export RTE_TARGET=x86_64-ivshmem-linuxapp-gcc
 
 # If running bash and ~/.bashrc exists, include it
 if [ -n "$BASH_VERSION" ] && [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
+    . "$HOME/.bashrc"
 fi
 
 if [[ -z "$DISPLAY" && $(tty) == /dev/tty1 ]]; then
