@@ -165,6 +165,6 @@ exec --no-startup-id xrdb -merge ~/.Xresources
 exec --no-startup-id xcompmgr -c -f -F -n
 
 exec --no-startup-id ~/.dropbox-dist/dropboxd
-exec --no-startup-id ~/bittorrent_sync/btsync --storage ~/bittorrent_sync
+exec --no-startup-id ~/bittorrent_sync/btsync --storage ~/bittorrent_sync/.sync
 exec --no-startup-id sleep 0.2 && i3-sensible-terminal
 exec --no-startup-id xbindkeys_autostart
