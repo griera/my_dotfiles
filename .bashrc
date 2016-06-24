@@ -198,6 +198,14 @@ function rm_trailw () {
         -type f -print0 | xargs -0 sed -i -e "s/[[:space:]]*$//"
 }
 
+# Install Dropbox Linux client
+function install_dropbox () {
+    cd $HOME
+    wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
+    wget -O $HOME/.dropbox-dist/dropbox.py \
+        "https://www.dropbox.com/download?dl=packages/dropbox.py"
+}
+
 #######################################
 ##              ALIASES              ##
 #######################################
