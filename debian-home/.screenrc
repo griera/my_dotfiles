@@ -1,0 +1,4 @@
+startup_message off
+defscrollback 100000
+hardstatus alwayslastline
+hardstatus string '%{= kG}%{g}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n %t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %D %Y-%m-%d %c:%s %{g}]'
