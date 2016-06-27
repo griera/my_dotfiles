@@ -22,3 +22,5 @@ while read -r line ; do
     rm -rf $orig_file
     ln -s $new_file $orig_file
 done < $record_file
+
+exit
