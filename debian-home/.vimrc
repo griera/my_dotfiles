@@ -95,6 +95,10 @@ filetype plugin indent on    " required
 " Most of this configurations are based on this article:
 " http://items.sjbach.com/319/configuring-vim-right
 
+" With a map leader it's possible to do extra key combinations
+let mapleader=","
+let g:mapleader=","
+
 " Enables limited line numbering in a buffer.
 " Format is: (line, column, %).
 set ruler
@@ -128,6 +132,9 @@ set scrolloff=3
 " Set the terminal title
 set title
 
+" Remember info about open buffers on close
+set viminfo^=%
+
 set mouse=nv
 set relativenumber
 set number
@@ -135,6 +142,8 @@ set history=1000
 set textwidth=80
 set colorcolumn=80
 set wrap
+set cmdheight=2
+
 
 " Search options
 """""""""""""""""""""""""""""""""""""""
@@ -148,7 +157,7 @@ set hlsearch
 """""""""""""""""""""""""""""""""""""""
 set wildmenu
 set wildmode=list:longest
-set wildignore=*.o,*.obj,*~
+set wildignore=*.o,*.obj,*~,*.pyc
 set wildignore+=*.png,*.jpg,*.gif
 
 
@@ -161,6 +170,9 @@ set autoindent
 set smartindent
 set expandtab
 set smarttab
+
+" Toggle autoindent on/off when pasting text
+set pastetoggle=<F1>
 
 
 " Appearance options
@@ -184,6 +196,7 @@ nnoremap <CR> :nohlsearch<CR><CR>
 
 " Sets shortcut to open/close NERDTree
 map <C-n> :NERDTreeToggle<CR>
+
 
 " File type specific configurations
 """""""""""""""""""""""""""""""""""""""
@@ -266,8 +279,8 @@ augroup filetype_vim
     autocmd FileType vim let b:comment_leader = '"'
 augroup END
 
-noremap <silent> ,cc :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
-noremap <silent> ,cu :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
+noremap <silent> <leader>cc :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
+noremap <silent> <leader>cu :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
 
 
 " =============================================================================
@@ -321,5 +334,5 @@ let g:NERDTreeIndicatorMapCustom = {
 
 " Jumps to the last position when reopening a file"
 if has("autocmd")
-  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif

@@ -142,6 +142,7 @@ set history=1000
 set textwidth=80
 set colorcolumn=80
 set wrap
+set cmdheight=2
 
 
 " Search options
@@ -169,6 +170,9 @@ set autoindent
 set smartindent
 set expandtab
 set smarttab
+
+" Toggle autoindent on/off when pasting text
+set pastetoggle=<F1>
 
 
 " Appearance options
@@ -330,8 +334,5 @@ let g:NERDTreeIndicatorMapCustom = {
 
 " Jumps to the last position when reopening a file"
 if has("autocmd")
-  \ au BufReadPost *
-  \ if line("'\"") > 0 && line("'\"") <= line("$") |
-  \   exe "normal! g'\"" |
-  \ endif
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
