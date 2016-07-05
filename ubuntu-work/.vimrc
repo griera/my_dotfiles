@@ -162,6 +162,8 @@ set smartindent
 set expandtab
 set smarttab
 
+" Toggle autoindent on/off when pasting text
+set pastetoggle=<F1>
 
 " Appearance options
 """""""""""""""""""""""""""""""""""""""
@@ -184,6 +186,7 @@ nnoremap <CR> :nohlsearch<CR><CR>
 
 " Sets shortcut to open/close NERDTree
 map <C-n> :NERDTreeToggle<CR>
+
 
 " File type specific configurations
 """""""""""""""""""""""""""""""""""""""

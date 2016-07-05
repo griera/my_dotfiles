@@ -185,6 +185,7 @@ nnoremap <CR> :nohlsearch<CR><CR>
 " Sets shortcut to open/close NERDTree
 map <C-n> :NERDTreeToggle<CR>
 
+
 " File type specific configurations
 """""""""""""""""""""""""""""""""""""""
 " Grouping related autocommands is intended to improve Vim performance. This tip
