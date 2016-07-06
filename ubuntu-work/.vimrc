@@ -142,7 +142,6 @@ set history=1000
 set textwidth=80
 set colorcolumn=80
 set wrap
-set cmdheight=2
 
 
 " Search options
