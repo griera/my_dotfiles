@@ -59,6 +59,11 @@ export EDITOR=vim
 export RTE_SDK=$HOME/dpdk
 export RTE_TARGET=x86_64-native-linuxapp-gcc
 
+# On Ubuntu, gcc/g++ maintained package is 4.8.4, so if we need to use a more
+# recent version, these environment variables must be set
+export CC=gcc-4.9
+export CXX=g++-4.9
+
 #######################################
 ##              OTHERS               ##
 #######################################
