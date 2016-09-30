@@ -12,7 +12,7 @@
 ##      ENVIRONMENTAL VARIABLES      ##
 #######################################
 
-PATH="${PATH}:/sbin:/usr/sbin:~/bittorrent_sync"
+PATH="${PATH}:/sbin:/usr/sbin"
 PATH="${PATH}:~/repos/my_scripts"
 export PATH
 
