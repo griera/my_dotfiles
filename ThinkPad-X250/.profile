@@ -12,7 +12,7 @@
 ##      ENVIRONMENTAL VARIABLES      ##
 #######################################
 
-PATH="${PATH}:/sbin:/usr/sbin"
+PATH="${PATH}:/sbin:/usr/sbin:~/resilio_sync"
 PATH="${PATH}:~/repos/my_scripts"
 export PATH
 

@@ -12,7 +12,7 @@
 ##      ENVIRONMENTAL VARIABLES      ##
 #######################################
 
-PATH="${PATH}:/sbin:/usr/sbin:~/.dropbox-dist"
+PATH="${PATH}:/sbin:/usr/sbin:~/resilio_sync:~/.dropbox-dist"
 PATH="${PATH}:/media/DADES/My_Folder/Quiniela/scripts"
 PATH="${PATH}:~/repos/my_scripts"
 export PATH
