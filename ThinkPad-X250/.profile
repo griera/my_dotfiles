@@ -19,7 +19,7 @@ export PATH
 # Set where cd builtin finds the directory. If CDPATH is set, the working
 # directory MUST BE the first component in order to assure the proper
 # functioning of cd builtin
-export CDPATH=".:/media/DADES/My_Folder:~/repos"
+export CDPATH=".:~/repos"
 
 # Execute its content (bash function) just before Bash displays the prompt.
 # See "PROMPT SETTING" section in ~/.bashrc for more information.
