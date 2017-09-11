@@ -8,5 +8,4 @@
 .vimrc /home/griera/.vimrc
 .xinitrc /home/griera/.xinitrc
 .Xresources /home/griera/.Xresources
-bluetooth /etc
 terminal_themes /home/griera/terminal_themes
