@@ -196,6 +196,11 @@ nnoremap <CR> :nohlsearch<CR><CR>
 " Sets shortcut to open/close NERDTree
 map <C-n> :NERDTreeToggle<CR>
 
+" Edit vim configuration file
+nnoremap confe :vs $MYVIMRC<CR>
+
+" Reload vim configuration file
+nnoremap confr :source $MYVIMRC<CR>
 
 " File type specific configurations
 """""""""""""""""""""""""""""""""""""""
