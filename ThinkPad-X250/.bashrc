@@ -206,6 +206,16 @@ function install_dropbox () {
         "https://www.dropbox.com/download?dl=packages/dropbox.py"
 }
 
+# Small CPU benchmark with PI, bc and time
+function cpubench() {
+    local CPU="${1:-1}"
+    local SCALE="${2:-5000}"
+    for LOOP in $(seq 1 $CPU) ; do
+        time echo "scale=${SCALE}; 4*a(1)" | bc -l -q | grep -v ^"[0-9]" &
+    done
+    echo -e "Cores: $CPU\nDigit: $SCALE"
+}
+
 #######################################
 ##              ALIASES              ##
 #######################################
