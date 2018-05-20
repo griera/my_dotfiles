@@ -1,10 +1,1 @@
-.bash_color_codes /home/griera/.bash_color_codes
-.bashrc /home/griera/.bashrc
-.i3 /home/griera/.i3
-.gitconfig /home/griera/.gitconfig
-.profile /home/griera/.profile
-.screenrc /home/griera/.screenrc
-.vimrc /home/griera/.vimrc
-.xinitrc /home/griera/.xinitrc
-.Xresources /home/griera/.Xresources
-terminal_themes /home/griera/terminal_themes
+bash.command-not-found /home/griera/bash.command-not-found

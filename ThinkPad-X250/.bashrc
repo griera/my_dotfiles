@@ -276,3 +276,9 @@ alias dpdk_setup="~/repos/dpdk_training/tools/dpdk_setup.sh"
 # Keep the bash completion enabled for git alias
 . /usr/share/bash-completion/completions/git
 complete -F _git g
+
+# Enable bash-insulter:
+# https://github.com/hkbakke/bash-insulter
+if [ -f $HOME/bash.command-not-found ]; then
+    . $HOME/bash.command-not-found
+fi
