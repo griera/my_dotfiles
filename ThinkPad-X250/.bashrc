@@ -216,6 +216,15 @@ function cpubench() {
     echo -e "Cores: $CPU\nDigit: $SCALE"
 }
 
+# Mount a VMware virtual disk (.vmdk) file
+function vmmount() {
+    if [ ! -d "/tmp/vmmount" ]; then
+        sudo mkdir -p /tmp/vmmount
+    fi
+
+    sudo mount $1 /tmp/vmmount/ -o ro,loop=/dev/loop1,offset=32768 -t ntfs
+}
+
 #######################################
 ##              ALIASES              ##
 #######################################
