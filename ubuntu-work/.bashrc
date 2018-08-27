@@ -262,7 +262,6 @@ alias x='exit'
 alias chrome='google-chrome'
 alias rand4='echo $(($RANDOM%4 + 1))'
 alias g='git'
-alias dbox='dropbox.py'
 alias xbindkeys_restart='killall -HUP xbindkeys'
 
 # Useful alias for DPDK environment

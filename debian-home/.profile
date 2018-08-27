@@ -16,7 +16,7 @@
 GOPATH="$HOME/gopath"
 export GOPATH
 
-PATH="${PATH}:/sbin:/usr/sbin:~/resilio_sync:~/.dropbox-dist"
+PATH="${PATH}:/sbin:/usr/sbin:~/resilio_sync"
 PATH="${PATH}:/media/DADES/My_Folder/Quiniela/scripts"
 PATH="${PATH}:~/repos/my_scripts"
 PATH="${PATH}:$GOPATH:$GOPATH/bin"

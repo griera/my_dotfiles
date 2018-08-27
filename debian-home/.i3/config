@@ -164,9 +164,6 @@ exec --no-startup-id xrdb -merge ~/.Xresources
 # Start xcompmgr, a sample X compositing manager
 exec --no-startup-id xcompmgr -c -f -F -n
 
-# FIXME: Solve issue with external HDD partition
-#exec --no-startup-id ~/.dropbox-dist/dropboxd
-
 exec --no-startup-id ~/resilio_sync/rslsync --storage ~/resilio_sync/.sync
 exec --no-startup-id sleep 0.2 && i3-sensible-terminal
 exec --no-startup-id xbindkeys_autostart
