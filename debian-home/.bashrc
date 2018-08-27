@@ -198,14 +198,6 @@ function rm_trailw () {
         -type f -print0 | xargs -0 sed -i -e "s/[[:space:]]*$//"
 }
 
-# Install Dropbox Linux client
-function install_dropbox () {
-    cd $HOME
-    wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
-    wget -O $HOME/.dropbox-dist/dropbox.py \
-        "https://www.dropbox.com/download?dl=packages/dropbox.py"
-}
-
 # Small CPU benchmark with PI, bc and time
 function cpubench() {
     local CPU="${1:-1}"
@@ -270,7 +262,6 @@ alias x='exit'
 alias chrome='google-chrome'
 alias rand4='echo $(($RANDOM%4 + 1))'
 alias g='git'
-alias dbox='dropbox.py'
 alias rslsync='rslsync --storage ~/resilio_sync/.sync'
 alias xbindkeys_restart='killall -HUP xbindkeys'
 
