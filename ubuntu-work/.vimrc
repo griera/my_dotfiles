@@ -202,6 +202,13 @@ nnoremap confe :vs $MYVIMRC<CR>
 " Reload vim configuration file
 nnoremap confr :source $MYVIMRC<CR>
 
+" Paste content of register 0 (dd write to register " instead)
+nnoremap <leader>p "0p
+nnoremap <leader>p "0P
+
+" Overwrite visual selection with content of register 0
+vnoremap <leader>p "0p
+
 " File type specific configurations
 """""""""""""""""""""""""""""""""""""""
 " Grouping related autocommands is intended to improve Vim performance. This tip
