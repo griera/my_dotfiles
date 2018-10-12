@@ -155,6 +155,11 @@ bar {
     workspace_buttons yes
 }
 
+# Print screen
+bindsym --release Print exec "scrot -m '/home/griera/Downloads/%Y%m%d_%H%M%S_$wx$h.png'"
+bindsym --release Shift+Print exec "scrot -s '/home/griera/Downloads/%Y%m%d_%H%M_$wx$h.png'"
+bindsym --release $mod+Shift+Print exec "scrot -u -d 4 '/home/griera/Downloads/%Y%m%d_%H%M_$wx$h.png'"
+
 ######################
 #  Startup programs  #
 ######################

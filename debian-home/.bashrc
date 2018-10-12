@@ -264,6 +264,7 @@ alias rand4='echo $(($RANDOM%4 + 1))'
 alias g='git'
 alias rslsync='rslsync --storage ~/resilio_sync/.sync'
 alias xbindkeys_restart='killall -HUP xbindkeys'
+alias dumppayload='sudo tcpdump -nnvvXSs 1514'
 
 # Useful alias for DPDK environment
 alias dpdk_nic_bind="sudo ${RTE_SDK}/tools/dpdk_nic_bind.py"
