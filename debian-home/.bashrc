@@ -217,6 +217,13 @@ function vmmount() {
     sudo mount $1 /tmp/vmmount/ -o ro,loop=/dev/loop1,offset=32768 -t ntfs
 }
 
+# git clone all user repos
+function gclaur() {
+    local user="$1"
+    curl -s https://api.github.com/users/$user/repos | \
+        jq -r 'map(select(.fork == false)) | map(.url) | map(sub("https://api.github.com/repos/"; "git clone git@github.com:")) | @sh' | xargs -n1 sh -c
+}
+
 #######################################
 ##              ALIASES              ##
 #######################################
