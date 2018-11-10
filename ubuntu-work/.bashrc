@@ -223,6 +223,12 @@ function gen_random_str() {
         sleep .15
         head /dev/urandom | tr -dc A-Za-z0-9
     done
+
+# git clone all user repos
+function gclaur() {
+    local user="$1"
+    curl -s https://api.github.com/users/$user/repos | \
+        jq -r 'map(select(.fork == false)) | map(.url) | map(sub("https://api.github.com/repos/"; "git clone git@github.com:")) | @sh' | xargs -n1 sh -c
 }
 
 #######################################
