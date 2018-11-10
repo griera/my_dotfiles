@@ -217,6 +217,14 @@ function vmmount() {
     sudo mount $1 /tmp/vmmount/ -o ro,loop=/dev/loop1,offset=32768 -t ntfs
 }
 
+# Continuous random string of text
+function gen_random_str() {
+    while true ; do
+        sleep .15
+        head /dev/urandom | tr -dc A-Za-z0-9
+    done
+}
+
 #######################################
 ##              ALIASES              ##
 #######################################
