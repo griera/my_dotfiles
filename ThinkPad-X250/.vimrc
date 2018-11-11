@@ -209,6 +209,25 @@ nnoremap <leader>p "0P
 " Overwrite visual selection with content of register 0
 vnoremap <leader>p "0p
 
+" Force saving files that require root permission:
+"   - cnoremap: tells vim that the following shortcut is to be associated in
+"               the command line.
+"
+"   - w!!: the shortcut itself.
+"
+"   - execute '...': a command that execute the following string.
+"
+"   - silent!: run it silently
+"
+"   - write !sudo tee % >/dev/null: the OP question, added a redirection of
+"                                   messages to NULL to make a clean command.
+"
+"   - bar> edit!: this trick is the cherry of the cake: it calls also the edit
+"                 command to reload the buffer and then avoid messages such as 
+"                 the buffer has changed. <bar> is how to write the pipe symbol
+"                 to separate two commands here.
+cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
+
 " File type specific configurations
 """""""""""""""""""""""""""""""""""""""
 " Grouping related autocommands is intended to improve Vim performance. This tip
