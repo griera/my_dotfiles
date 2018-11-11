@@ -127,19 +127,19 @@ function set_prompt1 () {
 ##             FUNCTIONS             ##
 #######################################
 
-# Performs both mkdir and then got to this new directory with cd builtin
-function mkdircd () {
+# Perform both mkdir and then got to this new directory with cd builtin.
+function mkdircd() {
     mkdir -p "$@" && eval cd "\"\$$#\""
 }
 
-# Searches the command given as an argument inside bash history
-# and output those entries that match to it
-function hsrch () {
+# Search the command given as an argument inside bash history and output those
+# entries that match to it.
+function hsrch() {
     history | grep "$@"
 }
 
-# Checks if the given argument is a well formed IP at syntax level
-function isanip () {
+# Check if the given argument is a well formed IP at syntax level.
+function isanip() {
     if [[ $1 =~ ^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$ ]] ; then
         local BAK_IFS=$IFS
         IFS='.'
@@ -160,8 +160,8 @@ function isanip () {
     fi
 }
 
-# Resolves domain names to their IPs and viceversa
-function dnsres () {
+# Resolve domain names to their IPs and viceversa.
+function dnsres() {
     local output="$(nslookup $1)"
     local error="$(echo "$output" | grep ^[*][*])"
 
@@ -184,9 +184,9 @@ function dnsres () {
     return 0
 }
 
-# Removes trailing whitespaces for an entire directory.
-# It ignores .git an .svn folders and their contents.
-function rm_trailw () {
+# Remove trailing whitespaces for an entire directory. It ignores .git and
+# .svn folders and their contents.
+function rm_trailw() {
     if [ "x$1" = "x" ] ; then
         path="."
     else
@@ -198,7 +198,7 @@ function rm_trailw () {
         -type f -print0 | xargs -0 sed -i -e "s/[[:space:]]*$//"
 }
 
-# Small CPU benchmark with PI, bc and time
+# Run small CPU benchmark with PI, bc and time.
 function cpubench() {
     local CPU="${1:-1}"
     local SCALE="${2:-5000}"
@@ -208,7 +208,7 @@ function cpubench() {
     echo -e "Cores: $CPU\nDigit: $SCALE"
 }
 
-# Mount a VMware virtual disk (.vmdk) file
+# Mount a VMware virtual disk (.vmdk) file.
 function vmmount() {
     if [ ! -d "/tmp/vmmount" ]; then
         sudo mkdir -p /tmp/vmmount
@@ -217,7 +217,7 @@ function vmmount() {
     sudo mount $1 /tmp/vmmount/ -o ro,loop=/dev/loop1,offset=32768 -t ntfs
 }
 
-# Continuous random string of text
+# Generate continuous random string of text.
 function gen_random_str() {
     while true ; do
         sleep .15
@@ -225,16 +225,24 @@ function gen_random_str() {
     done
 }
 
-# git clone all user repos
+# Clone all repositories for a given user.
 function gclaur() {
     local user="$1"
     curl -s https://api.github.com/users/$user/repos | \
         jq -r 'map(select(.fork == false)) | map(.url) | map(sub("https://api.github.com/repos/"; "git clone git@github.com:")) | @sh' | xargs -n1 sh -c
 }
 
-# Dump man page as clean text
+# Dump man page as clean text.
 function man2txt() {
     man "$@" | col -bx
+}
+
+# Display full tree information of a single process.
+# Requires:
+#   - psmisc=23.2-1 (Debian testing)
+#   - libtinfo6=6.1+20181013-1 (Debian testing)
+function _pstree(){
+    pstree -plants $(pidof -s $1)
 }
 
 #######################################
