@@ -12,7 +12,7 @@
 ##      ENVIRONMENTAL VARIABLES      ##
 #######################################
 
-PATH="${PATH}:/sbin:/usr/sbin"
+PATH="${PATH}:/sbin:/usr/sbin:/home/griera/.pyenv/bin"
 export PATH
 
 # Set where cd builtin finds the directory. If CDPATH is set, the working

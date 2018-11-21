@@ -288,6 +288,10 @@ alias xbindkeys_restart='killall -HUP xbindkeys'
 alias dpdk_nic_bind="sudo ${RTE_SDK}/tools/dpdk_nic_bind.py"
 alias dpdk_setup="~/repos/dpdk_training/tools/dpdk_setup.sh"
 
+# Pyenv
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
 #######################################
 ##              OTHERS               ##
 #######################################
