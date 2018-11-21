@@ -277,6 +277,7 @@ alias install='sudo apt-get install'
 
 # Other useful aliases for frequently used commands
 alias ls='ls --color=auto'
+alias lshidden='ls -ld .[^.]*'
 alias l='ls -lah'
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
