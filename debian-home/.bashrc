@@ -245,6 +245,12 @@ function _pstree(){
     pstree -plants $(pidof -s $1)
 }
 
+# Watch how many tcp connections there are per state every two seconds.
+function tcpconns() {
+    watch -c "netstat -natp 2>/dev/null | tail -n +3 | \
+        awk '{print \$6}' | sort | uniq -c"
+}
+
 #######################################
 ##              ALIASES              ##
 #######################################
