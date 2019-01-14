@@ -12,7 +12,11 @@
 ##      ENVIRONMENTAL VARIABLES      ##
 #######################################
 
-PATH="${PATH}:/sbin:/usr/sbin:/home/griera/.pyenv/bin"
+# Set Go environment variables (needed by drive CLI tool)
+GOPATH="$HOME/gopath"
+export GOPATH
+
+PATH="${PATH}:/sbin:/usr/sbin:/home/griera/.pyenv/bin:$GOPATH:$GOPATH/bin"
 export PATH
 
 # Set where cd builtin finds the directory. If CDPATH is set, the working
