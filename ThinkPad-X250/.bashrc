@@ -309,3 +309,8 @@ complete -F _git g
 if [ -f $HOME/bash.command-not-found ]; then
     . $HOME/bash.command-not-found
 fi
+
+# Pyenv
+# https://github.com/pyenv/pyenv-installer
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
