@@ -275,11 +275,11 @@ alias h3='history 30'
 alias h4='history 40'
 alias h5='history 50'
 
-# apt-get command useful aliases
-alias upgrade='sudo apt-get update && sudo apt-get upgrade'
-alias purge='sudo apt-get purge'
-alias remove='sudo apt-get remove'
-alias install='sudo apt-get install'
+# apt command useful aliases
+alias upgrade='sudo apt update && sudo apt upgrade'
+alias purge='sudo apt purge'
+alias remove='sudo apt remove'
+alias install='sudo apt install'
 
 # Other useful aliases for frequently used commands
 alias ls='ls --color=auto'
