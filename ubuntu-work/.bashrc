@@ -290,6 +290,8 @@ alias chrome='google-chrome'
 alias rand4='echo $(($RANDOM%4 + 1))'
 alias g='git'
 alias xbindkeys_restart='killall -HUP xbindkeys'
+alias dumppayload='sudo tcpdump -nnvvXSs 1514'
+alias uefi_or_bios="[[ -d "/sys/firmware/efi" ]] && echo UEFI || echo BIOS"
 
 # Useful alias for DPDK environment
 alias dpdk_nic_bind="sudo ${RTE_SDK}/tools/dpdk_nic_bind.py"
