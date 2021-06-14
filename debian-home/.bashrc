@@ -306,6 +306,10 @@ alias uefi_or_bios="[[ -d "/sys/firmware/efi" ]] && echo UEFI || echo BIOS"
 alias dpdk_nic_bind="sudo ${RTE_SDK}/tools/dpdk_nic_bind.py"
 alias dpdk_setup="~/repos/dpdk_training/tools/dpdk_setup.sh"
 
+# Alias to output the current Swatch Internet Time
+alias beats='echo '\''@'\''$(TZ=GMT-1 date +'\''(%-S + %-M * 60 + %-H * 3600) / 86.4'\''|bc)'
+
+
 #######################################
 ##              OTHERS               ##
 #######################################
