@@ -15,6 +15,7 @@
 PATH="${PATH}:/sbin:/usr/sbin:~/resilio_sync"
 PATH="${PATH}:~/repos/my_scripts"
 PATH="${PATH}:~/.pyenv/bin"
+PATH="${PATH}:~/.local/bin"
 export PATH
 
 # Set where cd builtin finds the directory. If CDPATH is set, the working
