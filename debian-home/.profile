@@ -61,10 +61,8 @@ export EDITOR=vim
 #GCC_COLORS="${GCC_COLORS}:caret=01;32:locus=01:quote=01"
 #export GCC_COLORS
 
-# When compiling an application in the Linux* environment on the DPDK,
-# the following variables must be exported
-export RTE_SDK=$HOME/dpdk
-export RTE_TARGET=x86_64-ivshmem-linuxapp-gcc
+# Set default URI for libvirt
+export LIBVIRT_DEFAULT_URI="qemu:///system"
 
 #######################################
 ##              OTHERS               ##
